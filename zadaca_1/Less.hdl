@@ -1,0 +1,11 @@
+CHIP Less{
+	IN a[16],b[16];
+	OUT out;
+	
+	PARTS:
+	Not16(in=b,out=notb); 
+	Inc16(in=notb,out=b2);
+	Add16(a=a,b=b2,out=finaladd);
+
+	MSB(in=finaladd,out=out);
+}

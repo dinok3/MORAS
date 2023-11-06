@@ -1,0 +1,14 @@
+CHIP Max{
+	IN a[16],b[16];
+	OUT out[16];
+	
+	PARTS:
+	Not16(in=b,out=notb); 
+	Inc16(in=notb,out=b2);
+	Add16(a=a,b=b2,out=finaladd);
+
+	MSB(in=finaladd,out=out2);
+	
+	Mux16(a=a,b=b,sel=out2,out=out);
+	
+}

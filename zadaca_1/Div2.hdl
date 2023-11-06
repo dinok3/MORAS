@@ -1,0 +1,8 @@
+CHIP Div2{
+	IN in[16];
+	OUT out[16];
+	
+	PARTS:
+	// shift right
+	Or16(a=false,b[0..14] = in[1..15],b[15]=false,out=out);
+}

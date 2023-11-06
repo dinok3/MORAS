@@ -1,0 +1,25 @@
+CHIP NumBlocks{
+	IN in[16];
+	OUT out[16];
+	
+	PARTS:
+	Or16(a=false,b[1..15]=false,b[0]=true,out=out1); //start 1
+	
+	Checker(a=in[15],b=in[14],count=out1,out=fout1);
+	Checker(a=in[14],b=in[13],count=fout1,out=fout2);
+	Checker(a=in[13],b=in[12],count=fout2,out=fout3);
+	Checker(a=in[12],b=in[11],count=fout3,out=fout4);
+	Checker(a=in[11],b=in[10],count=fout4,out=fout5);
+	Checker(a=in[10],b=in[9],count=fout5,out=fout6);
+	Checker(a=in[9],b=in[8],count=fout6,out=fout7);
+	Checker(a=in[8],b=in[7],count=fout7,out=fout8);
+	Checker(a=in[7],b=in[6],count=fout8,out=fout9);
+	Checker(a=in[6],b=in[5],count=fout9,out=fout10);
+	Checker(a=in[5],b=in[4],count=fout10,out=fout11);
+	Checker(a=in[4],b=in[3],count=fout11,out=fout12);
+	Checker(a=in[3],b=in[2],count=fout12,out=fout13);
+	Checker(a=in[2],b=in[1],count=fout13,out=fout14);
+	Checker(a=in[1],b=in[0],count=fout14,out=out);
+
+
+}

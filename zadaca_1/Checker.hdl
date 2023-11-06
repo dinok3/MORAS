@@ -1,0 +1,9 @@
+CHIP Checker{
+	IN a,b,count[16];
+	OUT out[16];
+	
+	PARTS:
+	Xor(a=a,b=b,out=xor);
+	Inc16(in=count,out=plus);
+	Mux16(a=count,b=plus, sel=xor,out=out);
+}
