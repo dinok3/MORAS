@@ -1,0 +1,28 @@
+CHIP Log2{
+	IN in[16];
+	OUT out[16];
+	
+	PARTS:
+	Not16(in=true,out=count);
+	
+	Helper3(in=in,count=count,out=out1,outin=nin1);
+	Helper3(in=nin1,count=out1,out=out2,outin=nin2);
+	Helper3(in=nin2,count=out2,out=out3,outin=nin3);
+	Helper3(in=nin3,count=out3,out=out4,outin=nin4);
+	Helper3(in=nin4,count=out4,out=out5,outin=nin5);
+	Helper3(in=nin5,count=out5,out=out6,outin=nin6);
+	Helper3(in=nin6,count=out6,out=out7,outin=nin7);
+	Helper3(in=nin7,count=out7,out=out8,outin=nin8);
+	Helper3(in=nin8,count=out8,out=out9,outin=nin9);
+	Helper3(in=nin9,count=out9,out=out10,outin=nin10);
+	Helper3(in=nin10,count=out10,out=out11,outin=nin11);
+	Helper3(in=nin11,count=out11,out=out12,outin=nin12);
+	Helper3(in=nin12,count=out12,out=out13,outin=nin13);
+	Helper3(in=nin13,count=out13,out=out14,outin=nin14);
+	Helper3(in=nin14,count=out14,out=out15,outin=nin15);
+	Helper3(in=nin15,count=out15,out=out16,outin=nin16);
+	
+	Or(a=in[15],b=false, out=isNeg);
+	Mux16(a=out16, b=true, sel=isNeg, out=out);
+	
+}

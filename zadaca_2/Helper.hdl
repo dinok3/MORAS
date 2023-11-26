@@ -1,0 +1,10 @@
+CHIP Helper{
+	IN cc, currS[16], curr;
+	OUT out[16],cancount;
+	
+	PARTS:
+	And(a=curr, b=cc,out=out1);
+	Inc16(in=currS,out=inc);
+	Mux16(a=currS,b=inc, sel=out1,out=out);
+	Mux(a=false,b=true,sel=out1,out=cancount);
+}

@@ -1,0 +1,10 @@
+CHIP Helper3{
+	IN in[16], count[16];
+	OUT out[16],outin[16];
+	
+	PARTS:
+	Or16(a=false, b[0..14]=in[1..15], b[15]=false, out=out1, out=outin);
+	Helper2(in=out1, out=help1);
+	Inc16(in=count,out=a1);
+	Mux16(a=a1,b=count,sel=help1,out=out);
+}

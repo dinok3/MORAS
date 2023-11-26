@@ -1,0 +1,76 @@
+CHIP Clz{
+	IN in[16];
+	OUT out[16];
+	
+	PARTS:
+	// can count variable
+	Not16(in=true,out=counter);
+	Not(in = false,out= cancount);
+	Xor(a=false,b=in[15],out=prvi);
+	Not(in=prvi, out=n1);
+	Helper(cc=cancount,currS=counter,curr=n1, out=out1, cancount=cancount2);
+	
+
+	Xor(a=false,b=in[14],out=drugi);
+	Not(in=drugi, out=n2);
+	Helper(cc=cancount2,currS=out1,curr=n2, out=out2, cancount=cancount3);
+	
+	
+	Xor(a=false,b=in[13],out=treci);
+	Not(in=treci, out=n3);
+	Helper(cc=cancount3,currS=out2,curr=n3, out=out3, cancount=cancount4);
+	
+	Xor(a=false,b=in[12],out=cetvrti);
+	Not(in=cetvrti, out=n4);
+	Helper(cc=cancount4,currS=out3,curr=n4, out=out4, cancount=cancount5);
+	
+	Xor(a=false,b=in[11],out=peti);
+	Not(in=peti, out=n5);
+	Helper(cc=cancount5,currS=out4,curr=n5, out=out5, cancount=cancount6);
+	
+	Xor(a=false,b=in[10],out=sesti);
+	Not(in=sesti, out=n6);
+	Helper(cc=cancount6,currS=out5,curr=n6, out=out6, cancount=cancount7);
+	
+	Xor(a=false,b=in[9],out=sedmi);
+	Not(in=sedmi, out=n7);
+	Helper(cc=cancount7,currS=out6,curr=n7, out=out7, cancount=cancount8);
+	
+	Xor(a=false,b=in[8],out=osmi);
+	Not(in=osmi, out=n8);
+	Helper(cc=cancount8,currS=out7,curr=n8, out=out8, cancount=cancount9);
+	
+	Xor(a=false,b=in[7],out=deveti);
+	Not(in=deveti, out=n9);
+	Helper(cc=cancount9,currS=out8,curr=n9, out=out9, cancount=cancount10);
+	
+	Xor(a=false,b=in[6],out=deseti);
+	Not(in=deseti, out=n10);
+	Helper(cc=cancount10,currS=out9,curr=n10, out=out10, cancount=cancount11);
+	
+	Xor(a=false,b=in[5],out=jedanaesti);
+	Not(in=jedanaesti, out=n11);
+	Helper(cc=cancount11,currS=out10,curr=n11, out=out11, cancount=cancount12);
+	
+	Xor(a=false,b=in[4],out=dvanaesti);
+	Not(in=dvanaesti, out=n12);
+	Helper(cc=cancount12,currS=out11,curr=n12, out=out12, cancount=cancount13);
+	
+	Xor(a=false,b=in[3],out=trinasti);
+	Not(in=trinasti, out=n13);
+	Helper(cc=cancount13,currS=out12,curr=n13, out=out13, cancount=cancount14);
+	
+	Xor(a=false,b=in[2],out=cetrnaesti);
+	Not(in=cetrnaesti, out=n14);
+	Helper(cc=cancount14,currS=out13,curr=n14, out=out14, cancount=cancount15);
+	
+	Xor(a=false,b=in[1],out=petnaesti);
+	Not(in=petnaesti, out=n15);
+	Helper(cc=cancount15,currS=out14,curr=n15, out=out15, cancount=cancount16);
+	
+	Xor(a=false,b=in[0],out=sesnaesti);
+	Not(in=sesnaesti, out=n16);
+	Helper(cc=cancount16,currS=out15,curr=n16, out=out, cancount=cancount17);
+	
+	
+}
