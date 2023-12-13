@@ -5,10 +5,33 @@ for(int i = 1; i < 7; i++)
 	for(int j = 6; j >= i; j--)
 		if(A[j-1] > A[j])
 			std::swap(A[j-1],A[j]);
+
+@5
+D = A
+@e
+M = D 
+
+@10
+D = A
+@f
+M = D
+
+$SWP(e, f)
 			
 */
 
 // i = 1
+
+/*
+@3
+D = A
+@e
+M = D
+D = M
+@100
+D = D + A
+*/
+
 
 
 
@@ -70,7 +93,12 @@ D; JGE
 			@j
 			D = D + M
 
-			$SWP(D-1, D)
+			@e
+			M = D
+			@f
+			M = D-1
+
+			$SWP(@e, @f)
 			
 		
 

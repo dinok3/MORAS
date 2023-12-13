@@ -77,7 +77,19 @@ def _parse_macro(self, line, p, o):
     elif naredba == "MV":
         if len(list_of_args) == 2:
             c, d = list_of_args
-            l = f"@{c}\nD=M\n@{d}\nM=D"
+            print(c, d)
+         
+            if "@" in c:
+                first_var = f"{c}\nA=M"
+            else:
+                first_var = f"@{c}"
+
+            if "@" in d:
+                second_var = f"{d}\nA=M"
+            else:
+                second_var = f"@{d}"
+
+            l = f"{first_var}\nD=M\n{second_var}\nM=D"
             return l.split("\n")
         else:
             self._flag = False
