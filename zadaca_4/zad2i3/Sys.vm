@@ -1,0 +1,27 @@
+function Sys.init 0
+	push constant 4
+	push constant 9
+	push constant 7
+	//zad 2.a
+	call Main.max 3
+	
+	push constant 4
+	//zad 2.b
+	call Pell.pell 1 
+	
+	push constant 5
+	push constant 3
+	//zad 2.c
+	call Div.div 2
+	push constant 5
+	push constant 3
+	//zad 2.c
+	call Mod.mod 2
+	
+	push pointer 1
+	push constant 7
+	push constant 4
+	//zad 3
+	call BS.search 3
+label END  
+	goto END                

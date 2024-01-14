@@ -1,0 +1,30 @@
+
+function Main.max 3
+push argument 0
+pop local 0
+
+push argument 1
+push local 0
+gt
+if-goto SET_1
+label CONTINUE_1
+push argument 2
+push local 0
+gt
+if-goto SET_2
+label CONTINUE_2
+push local 0
+
+goto END
+label SET_1
+push argument 1
+pop local 0
+goto CONTINUE_1
+
+label SET_2
+push argument 2
+pop local 0
+goto CONTINUE_2
+
+label END
+return

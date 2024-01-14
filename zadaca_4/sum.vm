@@ -1,0 +1,40 @@
+push constant 10
+push constant 4
+push constant 5
+call Max.max 3
+
+label END
+goto END
+
+function Max.max 0
+	push argument 0
+	push argument 1
+	gt
+	push argument 0
+	push argument 2
+	gt
+	and
+	if-goto RETURN_FIRST
+
+	push argument 1
+	push argument 0
+	gt
+	push argument 1
+	push argument 2
+	gt
+	and
+	if-goto RETURN_SECOND
+
+	goto RETURN_THIRD
+
+	label RETURN_FIRST
+	push argument 0
+	return
+
+	label RETURN_SECOND
+	push argument 1
+	return
+
+	label RETURN_THIRD
+	push argument 2
+	return

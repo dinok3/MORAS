@@ -1,0 +1,9 @@
+function BS.search 3
+	push argument 1
+	push constant 2
+	call Div.div 2
+	
+	
+	push argument 0
+	add
+	push that 0
