@@ -1,0 +1,232 @@
+function Main.main 2
+push constant 7
+call Array.new 1
+pop local 0
+push constant 0
+push local 0
+add
+push constant 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push local 0
+add
+push constant 32
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push local 0
+add
+push constant 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push local 0
+add
+push constant 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push local 0
+add
+push constant 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+push local 0
+add
+push constant 7
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 6
+push local 0
+add
+push constant 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 0
+push constant 6
+call Main.QuickSort 3
+pop temp 0
+call Output.println 0
+pop temp 0
+push constant 0
+pop local 1
+label WHILE_EXP0
+push local 1
+push constant 7
+lt
+not
+if-goto WHILE_END0
+push local 1
+push local 0
+add
+pop pointer 1
+push that 0
+call Output.printInt 1
+pop temp 0
+call Output.println 0
+pop temp 0
+push local 1
+push constant 1
+add
+pop local 1
+goto WHILE_EXP0
+label WHILE_END0
+push local 0
+call Array.dispose 1
+pop temp 0
+push constant 0
+return
+function Main.QuickSort 1
+push argument 1
+push argument 2
+eq
+push argument 1
+push argument 2
+gt
+or
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+return
+label IF_FALSE0
+push argument 0
+push argument 1
+push argument 2
+call Main.partition 3
+pop local 0
+push argument 0
+push argument 1
+push local 0
+push constant 1
+sub
+call Main.QuickSort 3
+pop temp 0
+push argument 0
+push local 0
+push constant 1
+add
+push argument 2
+call Main.QuickSort 3
+pop temp 0
+push constant 0
+return
+function Main.partition 4
+push argument 1
+pop local 0
+push argument 1
+push argument 0
+add
+pop pointer 1
+push that 0
+pop local 3
+push argument 1
+push constant 1
+add
+pop local 2
+label WHILE_EXP0
+push local 2
+push argument 2
+lt
+push local 2
+push argument 2
+eq
+or
+not
+if-goto WHILE_END0
+push local 2
+push argument 0
+add
+pop pointer 1
+push that 0
+push local 3
+lt
+push local 2
+push argument 0
+add
+pop pointer 1
+push that 0
+push local 3
+eq
+or
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push local 0
+push constant 1
+add
+pop local 0
+push local 2
+push argument 0
+add
+pop pointer 1
+push that 0
+pop local 1
+push local 2
+push argument 0
+add
+push local 0
+push argument 0
+add
+pop pointer 1
+push that 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push argument 0
+add
+push local 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+label IF_FALSE0
+push local 2
+push constant 1
+add
+pop local 2
+goto WHILE_EXP0
+label WHILE_END0
+push local 0
+push argument 0
+add
+pop pointer 1
+push that 0
+pop local 1
+push local 0
+push argument 0
+add
+push local 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push argument 1
+push argument 0
+add
+push local 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+return

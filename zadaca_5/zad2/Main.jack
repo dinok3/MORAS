@@ -1,0 +1,43 @@
+class Main{
+    function void main(){
+        var int i;
+        var vint vector, vector2;
+
+        let vector = vint.new(4);
+        do vector.set(0,2);
+        do vector.set(1,4);
+        do vector.set(2,6);
+        do vector.set(3,8);
+        do vector.set(4,10);
+
+        do Output.printInt(vector.len());
+        do Output.println();
+        /*
+        do vector.resize(1);
+
+        let i = 0;
+        while(i < 2){
+            do Output.printInt(vector.get(i));
+            do Output.println();
+            let i = i+1;
+        }
+        do Output.printInt(vector.len());
+        do Output.println();
+        */
+
+        let vector2 = vint.new(4);
+        do vector2.set(3,2);
+        do vector2.set(4,4);
+        do vector2.set(2,6);
+        do vector2.set(0,8);
+        do vector2.set(1,10);
+
+        do Output.println();
+        do Output.printInt(vint.is_eq(vector, vector2));
+        do Output.println();
+        do Output.printInt(vint.elems(vector, vector2));
+
+        do vector.dispose();
+        return;
+    }
+}
