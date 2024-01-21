@@ -1,0 +1,51 @@
+class Main{
+    function void main(){
+        do Main.graph();
+        return;
+    }
+
+    
+    function void graph(){
+        var int i, y, count, x1,y1,x2,y2;
+        //osi - ishodiste - (128,128)
+        do Screen.drawLine(128,0,128,255);  // y
+        do Screen.drawLine(0,128,255,128); // x
+        
+
+        let count = 0;
+        let i = -128;
+        while(i < 128){
+            let y = Main.fx(i);
+            if(~(y = 999)){
+                
+                if(count = 0){
+                    let x1 = 128 + i;
+                    let y1 = 128 + y;
+                    let count = count + 1;
+                }
+                else{
+                    let x2 = 128 + i;
+                    let y2 = 128 + y;
+                    do Screen.drawLine(x1,y1,x2,y2);
+                    let x1 = x2;
+                    let y1 = y2;
+                }
+      
+            }
+            let i = i + 4;
+        }
+        return; 
+    }
+
+    function int fx(int x){
+        var int fx;
+        let fx = (x * x / 15) - 100; 
+
+        if((fx > 128) | (fx < (-127))){
+            return 999;
+        }
+        
+
+        return (-fx);
+    }
+}
